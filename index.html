@@ -1,0 +1,51 @@
+<html ng-app="notesApp">
+<head>
+<title>
+Colour pallet</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-controller="MainCtrl as ctrl">
+<h1 id="header">COLOR PALETTE</h1>
+
+<div id="colordisplay">
+<div id="coloralign">
+<p class="float">Hue </p>
+<input type="EditText" class="colorarea" ng-model="color1"></input>
+<p class="float">Saturation </p>
+<input type="EditText" class="colorarea" ng-model="color2"></input>
+<p class="float">Light </p>
+<input type="EditText" class="colorarea" ng-model="color3"></input>
+</div>
+<br />
+<table>
+<tr ng-repeat-start="note in ctrl.notes">
+<td>{{note.label}}</td>
+</tr>
+<tr ng-repeat-end>
+<td>Done: {{note.done}}</td>
+</tr>
+</table>
+<br />
+</div>
+<div clas="setline">
+<div class="box" nd-bind=""style="background-color: color"></div>
+<button class="but" ng-click="changeColor()" >Update</button>
+</div>
+<script src="angular.js"></script>
+<script>
+
+angular.module('notesApp', [])
+
+.controller('MainCtrl', [function() {
+var self = this;
+self.notes = [
+{id: 1, label: 'First Note', done: false},
+{id: 2, label: 'Second Note', done: false},
+{id: 3, label: 'Finished Third Note', done: true}
+];
+}]);
+
+</script>
+</body>
+</html>
