@@ -24,10 +24,10 @@ Colour pallet</title>
   <div ng-repeat="mystyle in Style">  
 <div class="box" ng-style="mystyle.style"></div>
     <button class="a_demo_one" ng-click="removeColor($index)">Remove</button>
-     <!-- <input type ="number" class = "colorarea" ng-model="colour2.red"></input>
+      <input type ="number" class = "colorarea" ng-model="colour2.red"></input>
       <input type ="number" class = "colorarea" ng-model="colour2.green"></input>
       <input type ="number" class = "colorarea" ng-model="colour2.blue"></input>
- <button class="but" ng-click="changePointColour($index)">Change Colour</button>-->
+ <button class="but" ng-click="editPointColour($index)">Change Colour</button>
     
     </div>
 <button class="but" ng-click="addColour(colour)" >Update</button>

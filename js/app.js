@@ -34,15 +34,16 @@ this.style = {background: 'hsl('+red+','+green+'%'+','+blue+'%'+')'};
         $scope.colour.blue="";
         $scope.colour.green="";
     };
-    
-    $scope.edit = function(){
-        
-    }
     $scope.editPointColour = function(index){
         
-    $scope.Style[index].style = {background: 'hsl('+colour2.red+','+colour2.green+'%'+','+colour2.blue+'%'+')'};
-        
+    $scope.Style[index].style = {background: 'hsl('+$scope.colour2.red+','+$scope.colour2.green+'%'+','+$scope.colour2.blue+'%'+')'};
+      /*  $scope.colour2.red ="";
+        $scope.colour2.blue="";
+        $scope.colour2.green="";*/
     }
+    $scope.sortPics = function(){
+    
+    };
 }]);
     
   /*  colourPallete.controller("EditController",["$scope",function($scope){
