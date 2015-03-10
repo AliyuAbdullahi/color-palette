@@ -40,8 +40,10 @@ this.style = {background: 'hsl('+red+','+green+'%'+','+blue+'%'+')'};
     }
     $scope.editPointColour = function(index){
         
-    $scope.Style[index].style = {background: 'hsl('+colour2.red+','+colour2.green+'%'+','+colour2.blue+'%'+')'};
-        
+    $scope.Style[index].style = {background: 'hsl('+$scope.colour2.red+','+$scope.colour2.green+'%'+','+$scope.colour2.blue+'%'+')'};
+      /*  $scope.colour2.red ="";
+        $scope.colour2.blue="";
+        $scope.colour2.green="";*/
     }
 }]);
     
