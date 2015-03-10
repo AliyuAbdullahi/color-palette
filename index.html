@@ -1,51 +1,44 @@
-<html ng-app="notesApp">
+<html ng-app="colourPallete">
 <head>
 <title>
 Colour pallet</title>
-<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 
-<body ng-controller="MainCtrl as ctrl">
+<body ng-controller="ColourController">
 <h1 id="header">COLOR PALETTE</h1>
 
 <div id="colordisplay">
 <div id="coloralign">
 <p class="float">Hue </p>
-<input type="EditText" class="colorarea" ng-model="color1"></input>
+<input type="number" class="colorarea" ng-model="colour.red"></input>
 <p class="float">Saturation </p>
-<input type="EditText" class="colorarea" ng-model="color2"></input>
+<input type="number" class="colorarea" ng-model="colour.green"></input>
 <p class="float">Light </p>
-<input type="EditText" class="colorarea" ng-model="color3"></input>
+<input type="number" class="colorarea" ng-model="colour.blue"></input>
 </div>
 <br />
-<table>
-<tr ng-repeat-start="note in ctrl.notes">
-<td>{{note.label}}</td>
-</tr>
-<tr ng-repeat-end>
-<td>Done: {{note.done}}</td>
-</tr>
-</table>
 <br />
 </div>
 <div clas="setline">
-<div class="box" nd-bind=""style="background-color: color"></div>
-<button class="but" ng-click="changeColor()" >Update</button>
+  <div ng-repeat="mystyle in Style">  
+<div class="box" ng-style="mystyle.style"></div>
+    <button class="a_demo_one" ng-click="removeColor($index)">Remove</button>
+     <!-- <input type ="number" class = "colorarea" ng-model="colour2.red"></input>
+      <input type ="number" class = "colorarea" ng-model="colour2.green"></input>
+      <input type ="number" class = "colorarea" ng-model="colour2.blue"></input>
+ <button class="but" ng-click="changePointColour($index)">Change Colour</button>-->
+    
+    </div>
+<button class="but" ng-click="addColour(colour)" >Update</button>
+    
+    <button class="a_demo_one" ng-click="clearAll(colour)">Clear</button>
 </div>
 <script src="angular.js"></script>
-<script>
+<script src="js/app.js" >
+    
 
-angular.module('notesApp', [])
-
-.controller('MainCtrl', [function() {
-var self = this;
-self.notes = [
-{id: 1, label: 'First Note', done: false},
-{id: 2, label: 'Second Note', done: false},
-{id: 3, label: 'Finished Third Note', done: true}
-];
-}]);
-
+    
 </script>
 </body>
 </html>
